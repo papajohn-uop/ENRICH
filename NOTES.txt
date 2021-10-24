@@ -1,0 +1,20 @@
+Installation
+    2019  cd openapigenerator/
+    2020  wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.2.1/openapi-generator-cli-5.2.1.jar -O openapi-generator-cli.jar
+    2021  java -jar openapi-generator-cli.jar help
+    2022  java -jar openapi-generator-cli.jargenerate  help
+    2023  java -jar openapi-generator-cli.jar generate  help
+    2024  java -jar openapi-generator-cli.jar help generate  
+    2025  mkdir -p ~/bin/openapitools
+    2026  curl https://raw.githubusercontent.com/OpenAPITools/openapi-generator/master/bin/utils/openapi-generator-cli.sh > ~/bin/openapitools/openapi-generator-cli
+    2027  chmod u+x ~/bin/openapitools/openapi-generator-cli
+    2028  export PATH=$PATH:~/bin/openapitools/
+    2029  openapi-generator-cli version
+Creation
+    openapi-generator-cli generate -i https://raw.githubusercontent.com/tmforum-apis/TMF638_ServiceInventory/master/TMF638-ServiceInventory-v4.0.0.swagger.json -g python-fastapi -o ./TMF638/python
+Execution
+    cd src 
+    uvicorn openapi_server.main:app --host 0.0.0.0 --port 8080
+Web
+    http://127.0.0.1:8080/docs
+
